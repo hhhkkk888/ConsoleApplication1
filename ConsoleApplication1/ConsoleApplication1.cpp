@@ -139,5 +139,160 @@ int main(void)
 	}
 	return 0;
 	
-}*/
+}
 
+#include <iostream>
+
+using namespace std;
+
+void myfunc(void)
+{
+	cout << "myfunc(void) called" << endl;
+}
+
+void myfunc(char c)
+{
+	cout << "myfunc(char c) called" << endl;
+}
+
+void myfunc(int a, int b)
+{
+	cout << "myfunc(int a,int b) called" << endl;
+}
+
+int main(void)
+{
+	myfunc();
+	myfunc('A');
+	myfunc(12, 13);
+	return 0;
+}
+
+#include <iostream>
+
+using namespace std;
+
+void  swap(int *a, int *b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+	
+}
+
+void swap(char* a, char* b)
+{
+	char temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+void swap(double* a, double* b)
+{
+	double temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+int main(void)
+{
+	int num1 = 20;
+	int num2 = 30;
+	swap(&num1, &num2);
+	cout << num1 << ' ' << num2 << endl;
+	char ch1 = 'A';
+	char ch2 = 'Z';
+	swap(&ch1, &ch2);
+	cout << ch1 << ' ' << ch2 << endl;
+
+	double dbl1 = 1.111;
+	double dbl2 = 5.555;
+	swap(&dbl1, &dbl2);
+	cout<< dbl1 << ' ' << dbl2 << endl;
+
+	 
+	return 0;
+}
+
+#include <iostream>
+
+using namespace std;
+
+int adder(int num1 = 1, int num2 = 2)
+{
+	return num1 + num2;
+}
+
+int main(void)
+{
+	cout << adder() << endl;
+	cout << adder(5) << endl;
+	cout << adder(3, 5) << endl;
+	return 0;
+}
+
+#include <iostream>
+
+using namespace std;
+
+int adder(int num1 = 1, int num2 = 2);
+
+int main(void)
+{
+	cout << adder() << endl;
+	cout << adder(5) << endl;
+	cout << adder(3, 5) << endl;
+	return 0;
+}
+
+int adder(int num1, int num2)
+{
+	return num1 + num2;
+}
+
+#include <iostream>
+
+using namespace std;
+
+int boxvolume(int lenght, int width = 1, int height = 1);
+
+int main(void)
+{
+	cout << "[3,3,3]" << boxvolume(3, 3, 3) << endl;
+	cout << "[5,5,D]" << boxvolume(5, 5) << endl;
+	cout << "[7,D,D]" << boxvolume(7) << endl;
+	//cout << "[D,D,D]" << boxvolume() << endl;
+	return 0;
+}
+
+int boxvolume(int lenght, int width, int height)
+{
+	return lenght * width * height;
+}
+
+#include <iostream>
+
+using namespace std;
+
+int boxvolume(int length, int width, int height)
+{
+	return length * width * height;
+}
+int boxvolume(int lenght, int width)
+{
+	return lenght * width * 1;
+}
+int boxvolume(int lenght)
+{
+	return lenght * 1 * 1;
+}
+
+int main(void)
+{
+	cout << "[3,3,3]" << boxvolume(3, 3, 3) << endl;
+	cout << "[5,5,D]" << boxvolume(5, 5) << endl;
+	cout << "[7,D,D]" << boxvolume(7) << endl;
+	//cout << "[D,D,D]" << boxvolume() << endl;
+	return 0;
+}
+*/

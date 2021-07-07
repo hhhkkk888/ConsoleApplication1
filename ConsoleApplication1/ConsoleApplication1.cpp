@@ -1,4 +1,4 @@
-﻿/* //1-1
+﻿/*
 #include <iostream>
 
 int main(void)
@@ -138,7 +138,7 @@ int main(void)
 		cout << result << endl;
 	}
 	return 0;
-	
+
 }
 
 #include <iostream>
@@ -177,7 +177,7 @@ void  swap(int *a, int *b)
 	int temp = *a;
 	*a = *b;
 	*b = temp;
-	
+
 }
 
 void swap(char* a, char* b)
@@ -210,7 +210,7 @@ int main(void)
 	swap(&dbl1, &dbl2);
 	cout<< dbl1 << ' ' << dbl2 << endl;
 
-	 
+
 	return 0;
 }
 
@@ -294,5 +294,213 @@ int main(void)
 	cout << "[7,D,D]" << boxvolume(7) << endl;
 	//cout << "[D,D,D]" << boxvolume() << endl;
 	return 0;
+}
+
+
+#include <iostream>
+
+using namespace std;
+
+inline int SQUARE(int x)
+{
+	return x * x;
+
+}
+
+int main(void)
+{
+	cout << SQUARE(5) << endl;
+	cout << SQUARE(12) << endl;
+	return 0;
+}
+
+#include <iostream>
+
+using namespace std;
+
+namespace bestcomimpl
+{
+	void simplefunc(void)
+	{
+		cout << "bestcom이 정의한 함수" << endl;
+	}
+}
+
+namespace progcomimpl
+{
+	void simplefunc(void)
+	{
+		cout << "progcom이 정의한 함수" << endl;
+	}
+}
+
+int main(void)
+{
+	bestcomimpl::simplefunc();
+	progcomimpl::simplefunc();
+	return 0;
+}
+
+#include <iostream>
+
+using namespace std;
+
+namespace bestcomimpl
+{
+	void simplefunc(void);
+}
+
+namespace progcomimpl
+{
+	void simplefunc(void);
+}
+
+int main(void)
+{
+	bestcomimpl::simplefunc();
+	progcomimpl::simplefunc();
+	return 0;
+}
+
+void bestcomimpl::simplefunc(void)
+{
+	cout << "bestcom이 정의한 함수" << endl;
+}
+
+void progcomimpl::simplefunc(void)
+{
+	cout << "progcom이 정의한 함수" << endl;
+}
+
+#include <iostream>
+
+using namespace std;
+
+namespace bestcomimpl
+{
+	void simplefunc(void);
+}
+
+namespace bestcomimpl
+{
+	void prettyfunc(void);
+}
+
+namespace progcomimpl
+{
+	void simplefunc(void);
+}
+
+int main(void)
+{
+	bestcomimpl::simplefunc();
+	return 0;
+}
+
+void bestcomimpl::simplefunc(void)
+{
+	cout << "bestcom이 정의한 함수" << endl;
+	prettyfunc();
+	progcomimpl::simplefunc();
+}
+
+void bestcomimpl::prettyfunc(void)
+{
+	cout << "so pretty!!" << endl;
+}
+
+void progcomimpl::simplefunc(void)
+{
+	cout << "progcom이 정의한 함수" << endl;
+}
+
+#include "namespace.h"
+
+
+int main(void)
+{
+	bestcomimpl::simplefunc();
+	progcomimpl::simplefunc();
+}
+
+
+
+#include <iostream>
+
+using namespace std;
+
+namespace hybrid
+{
+	void hybfunc(void)
+	{
+		cout << "so simple function!" << endl;
+		cout << "in namespace hybrid!" << endl;
+	}
+}
+
+int main(void)
+{
+	using hybrid::hybfunc;
+	hybfunc();
+	return 0;
+}
+
+
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::endl;
+
+int main(void)
+{
+	int num = 20;
+	cout << "Hello world!" << endl;
+	cout << "Hello " << "world!" << endl;
+	cout << num << ' ' << 'A' << endl;
+	cout << ' ' << 3.14 << endl;
+	return 0;
+}
+
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+	int num = 20;
+	cout << "Hello world!" << endl;
+	cout << "Hello " << "world!" << endl;
+	cout << num << ' ' << 'A' << endl;
+	cout << ' ' << 3.14 << endl;
+	return 0;
+}
+
+#include <iostream>
+
+using namespace std;
+
+namespace AAA
+{
+	namespace BBB
+	{
+		namespace CCC
+		{
+			int num1; 
+			int num2;
+		}
+	}
+}
+
+int main(void)
+{
+	AAA::BBB::CCC::num1 = 20;
+	AAA::BBB::CCC::num2 = 30;
+
+	namespace ABC = AAA::BBB::CCC;
+	cout << ABC::num1 << endl;
+	cout << ABC::num2 << endl;
+	return 0;
+
 }
 */
